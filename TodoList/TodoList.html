@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="../TestTodoList/TodoList.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div><p class="title-todo">Todo List</p></div>
+      <br />
+
+      <div class="div-btn-addnew">
+        <button class="btn-addnew" onclick="createTask()">Add New</button>
+      </div>
+      <div class="div-search"><input type="text" class="search" id="myInput" onkeyup="myFunction()" placeholder="Search..." /></div>
+
+      <div class="div-list" id="id-list">
+        <ul class="ul-list" id="id-ul">
+          <li id="id-li"></li>
+          <li class="li-item">
+            <div class="a">
+              <input class="ip-item" type="checkbox" onclick="detailFunction()" name="" id="id-checkbox" />
+              <p class="p-title">Do homework</p>
+            </div>
+            <div class="b">
+              <button class="btn-detail" onclick="document.getElementById('update-item').style.display='block'">Detail</button>
+              <button class="btn-remove" id="id-li">Remove</button>
+            </div>
+          </li>
+          <br />
+          <li class="li-item">
+            <div class="a">
+              <input class="ip-item" type="checkbox" onclick="detailFunction()" name="" id="id-checkbox" />
+              <p class="p-title">Learn English</p>
+            </div>
+            <div class="b">
+              <button class="btn-detail" onclick="document.getElementById('update-item').style.display='block'">Detail</button>
+              <button class="btn-remove">Remove</button>
+            </div>
+          </li>
+          <br />
+          <li class="li-item">
+            <div class="a">
+              <input class="ip-item" type="checkbox" onclick="detailFunction()" name="" id="id-checkbox" />
+              <p class="p-title">Do Something</p>
+            </div>
+            <div class="b">
+              <button class="btn-detail" onclick="document.getElementById('update-item').style.display='block'">Detail</button>
+              <button class="btn-remove">Remove</button>
+            </div>
+          </li>
+          <br />
+          <li class="li-item">
+            <div class="a">
+              <input class="ip-item" type="checkbox" onclick="detailFunction()" name="" id="id-checkbox" />
+              <p class="p-title">Only HTML CSS</p>
+            </div>
+            <div class="b">
+              <button class="btn-detail" onclick="document.getElementById('update-item').style.display='block'">Detail</button>
+              <button class="btn-remove">Remove</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="update-item" class="modal">
+        <form class="modal-content animate" method="post">
+          <div>
+            <span onclick="document.getElementById('update-item').style.display='none'" class="close" title="Close Modal">X</span>
+          </div>
+
+          <br />
+          <div class="main1">
+            <input type="text" class="ip-addnewtask" id="addnew" placeholder="Update Item..." />
+          </div>
+          <br />
+          <div class="main2">
+            <div class="main2-title"><label class="lb-description">Description:</label></div>
+            <div class="main2_Textarea">
+              <textarea name="" id="input" class="textarea" rows="7" required="required"></textarea>
+            </div>
+            <br />
+            <div class="main3">
+              <div class="main3-left">
+                <div class="main3-left-title">
+                  <p class="p-duedate">Due Date</p>
+                </div>
+                <div class="main3-left_duedate">
+                  <input type="date" class="ip-duedate" id="id-duedate-update" name="date" />
+                </div>
+              </div>
+
+              <div class="main3-right">
+                <div class="main3-right-title">
+                  <p class="p-piority">Piority</p>
+                </div>
+                <div class="main3-right-piority">
+                  <select name="" id="id-piority" class="sl-piority" required="required">
+                    <option value="normal">Normal</option>
+                    <option value="low">Now</option>
+                    <option value="high">High</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="main4">
+              <button type="button" class="btn-update">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="add-item" class="modal">
+        <form class="modal-content animate" method="post">
+          <div>
+            <span onclick="document.getElementById('add-item').style.display='none'" class="close" title="Close Modal">X</span>
+          </div>
+          <div><p class="title-task">New Task</p></div>
+          <br />
+          <div class="main1">
+            <input type="text" class="ip-addnewtask" id="addnew" placeholder="Add new task..." />
+          </div>
+          <br />
+          <div class="main2">
+            <div class="main2-title"><label class="lb-description">Description:</label></div>
+            <div class="main2-textarea">
+              <textarea name="" id="input" class="textarea" rows="7" required="required"></textarea>
+            </div>
+            <br />
+            <div class="main3">
+              <div class="main3-left">
+                <div class="main3-left-title">
+                  <p class="p-duedate">Due Date</p>
+                </div>
+                <div class="main3-left-duedate">
+                  <input type="date" class="ip-duedate" id="id-duedate-add" name="date" />
+                </div>
+              </div>
+
+              <div class="main3-right">
+                <div class="main3-right-title">
+                  <p class="p-piority">Piority</p>
+                </div>
+                <div class="main3-right-piority">
+                  <select name="" id="id-piority" class="sl-piority" required="required">
+                    <option value="normal">Normal</option>
+                    <option value="low">Now</option>
+                    <option value="high">High</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="main4">
+              <button type="button" class="btn-add" id="push">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementById("id-duedate-add").valueAsDate = new Date();
+      document.getElementById("id-duedate-update").valueAsDate = new Date();
+
+      function createTask() {
+        const id = (document.getElementById("add-item").style.display = "block");
+      }
+    </script>
+    <script type="text/javascript" src="../TestTodoList/TodoList.js"></script>
+  </body>
+</html>
